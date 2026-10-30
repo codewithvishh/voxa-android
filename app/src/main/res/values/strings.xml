@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Voxa</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_library">Library</string>
+    <string name="search_hint">Search songs, artists, albums...</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="lyrics">Lyrics</string>
+</resources>

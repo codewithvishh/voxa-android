@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.VoxaMusic" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">#0E111B</item>
+        <item name="android:navigationBarColor">#0E111B</item>
+        <item name="android:windowBackground">#0E111B</item>
+    </style>
+</resources>

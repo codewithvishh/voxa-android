@@ -1,0 +1,7 @@
+<resources>
+    <color name="voxa_primary">#FF2A51</color>
+    <color name="voxa_background">#0E111B</color>
+    <color name="voxa_card">#161B26</color>
+    <color name="voxa_text_primary">#F8F9FC</color>
+    <color name="voxa_text_secondary">#71778E</color>
+</resources>
