@@ -20,11 +20,19 @@ jobs:
         distribution: 'temurin'
         cache: 'gradle'
 
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@v3
+      with:
+        packages: |
+          platform-tools
+          platforms;android-35
+          build-tools;35.0.0
+
     - name: Ensure Gradle Wrapper JAR
       run: |
         mkdir -p gradle/wrapper
         if [ ! -f "gradle/wrapper/gradle-wrapper.jar" ]; then
-          echo "Fetching gradle-wrapper.jar..."
+          echo "Downloading gradle-wrapper.jar..."
           curl -sLo gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.10.2/gradle/wrapper/gradle-wrapper.jar
         fi
         chmod +x gradlew
