@@ -5,8 +5,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Equalizer
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -59,7 +59,7 @@ fun TrackRow(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 if (isPlayingThis) {
                     Icon(
-                        imageVector = Icons.Default.Equalizer,
+                        imageVector = Icons.Default.PlayArrow,
                         contentDescription = "Playing",
                         tint = VoxaPrimary,
                         modifier = Modifier.size(16.dp).padding(end = 4.dp)

@@ -115,7 +115,7 @@ fun MiniPlayerBar(
 
         // Realtime Bottom Progress Line
         LinearProgressIndicator(
-            progress = { state.progress },
+            progress = state.progress,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(2.dp),

@@ -89,7 +89,7 @@ fun PlayerScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconButton(onClick = onDismiss) {
-                    Icon(imageVector = Icons.Default.KeyboardArrowDown, contentDescription = "Close", tint = VoxaTextPrimary, modifier = Modifier.size(32.dp))
+                    Icon(imageVector = Icons.Default.Close, contentDescription = "Close", tint = VoxaTextPrimary, modifier = Modifier.size(28.dp))
                 }
 
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {

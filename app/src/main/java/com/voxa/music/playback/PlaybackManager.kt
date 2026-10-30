@@ -10,8 +10,8 @@ import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
+import androidx.core.content.ContextCompat
 import com.google.common.util.concurrent.ListenableFuture
-import com.google.common.util.concurrent.MoreExecutors
 import com.voxa.music.data.model.Song
 import com.voxa.music.data.remote.ApiClient
 import com.voxa.music.data.repository.MusicRepository
@@ -52,7 +52,7 @@ class PlaybackManager private constructor(private val context: Context) {
             } catch (e: Exception) {
                 _state.update { it.copy(error = "Playback init failed: ${e.message}") }
             }
-        }, MoreExecutors.directExecutor())
+        }, ContextCompat.getMainExecutor(context))
     }
 
     private fun setupPlayerListener() {
