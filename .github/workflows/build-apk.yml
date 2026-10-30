@@ -18,27 +18,24 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: 'gradle'
 
-    - name: Set up Android SDK
-      uses: android-actions/setup-android@v3
+    - name: Set up Gradle 8.10.2
+      uses: gradle/actions/setup-gradle@v4
       with:
-        packages: |
-          platform-tools
-          platforms;android-35
-          build-tools;35.0.0
+        gradle-version: '8.10.2'
 
-    - name: Ensure Gradle Wrapper JAR
+    - name: Generate Official Gradle Wrapper
       run: |
-        mkdir -p gradle/wrapper
-        if [ ! -f "gradle/wrapper/gradle-wrapper.jar" ]; then
-          echo "Downloading gradle-wrapper.jar..."
-          curl -sLo gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.10.2/gradle/wrapper/gradle-wrapper.jar
-        fi
+        gradle wrapper
         chmod +x gradlew
 
     - name: Accept Android SDK licenses
-      run: yes | sdkmanager --licenses || true
+      run: |
+        if command -v sdkmanager &> /dev/null; then
+          yes | sdkmanager --licenses || true
+        elif [ -n "$ANDROID_HOME" ] && [ -f "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" ]; then
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
+        fi
 
     - name: Build Debug APK
       run: ./gradlew assembleDebug --no-daemon --stacktrace
