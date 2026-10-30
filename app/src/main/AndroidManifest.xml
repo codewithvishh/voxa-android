@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.VoxaMusic"
+        android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true">
 
         <activity
